@@ -6,7 +6,7 @@
         clearTimeout(handler);
         const xhr = new XMLHttpRequest(); 
         const item = document.getElementById("conversion-item").value;
-        xhr.open("GET", `https://1svkujd1fk.execute-api.us-east-2.amazonaws.com/trigger-attribution?item=${item}`, true); 
+        xhr.open("GET", `https://xdx5lv7dk3.execute-api.us-east-2.amazonaws.com/trigger-attribution?item=${item}`, true); 
         xhr.withCredentials = true; 
         xhr.send(`item=${item}`); 
         document.getElementById("msg").innerText = 'sent!';
