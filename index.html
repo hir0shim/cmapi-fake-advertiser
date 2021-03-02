@@ -1,11 +1,11 @@
-  
 <html>
     <script>
     var handler;
     const conv=() => {
         clearTimeout(handler);
         const xhr = new XMLHttpRequest(); 
-        xhr.open("GET", `https://xdx5lv7dk3.execute-api.us-east-2.amazonaws.com/trigger-attribution?event_type=conversion`, true); 
+        const item = document.getElementById("conversion-item").value;
+        xhr.open("GET", `https://xdx5lv7dk3.execute-api.us-east-2.amazonaws.com/trigger-attribution?conversion_data=${item}`, true); 
         xhr.withCredentials = true; 
         xhr.send(); 
         document.getElementById("msg").innerText = 'sent!';
@@ -13,8 +13,6 @@
     }
     </script>
     Welcome to advertiser website!<br /> 
-    landing pixel: <img src='https://xdx5lv7dk3.execute-api.us-east-2.amazonaws.com/trigger-attribution?event_type=landing' />
-    <br />
-    conversion button: <button id="conversion-button" onclick='conv()'>send a conversion</button><br />
+    <input type="number" id="conversion-item" value="1"></input><button id="conversion-button" onclick='conv()'>make a conversion</button><br />
     <p id="msg"></p>
 </html>
